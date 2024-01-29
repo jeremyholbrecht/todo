@@ -17,14 +17,14 @@ type TodoPageData struct {
 }
 
 func main() {
-	tmpl := template.Must(template.ParseFiles("foo.html"))
+	tmpl := template.Must(template.ParseFiles("todo.html"))
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		data := TodoPageData{
 			PageTitle: "My TODO list",
 			Todos: []Todo{
-				{Title: "Task 1", Done: false},
-				{Title: "Task 2", Done: true},
-				{Title: "Task 3", Done: true},
+				{Title: "Clean", Done: false},
+				{Title: "Work", Done: true},
+				{Title: "Meditate", Done: true},
 			},
 		}
 		err := tmpl.Execute(w, data)
