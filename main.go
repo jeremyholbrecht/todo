@@ -6,6 +6,8 @@ import (
 	"net/http"
 )
 
+const localhostPort = ":8080"
+
 type Todo struct {
 	Title string
 	Done  bool
@@ -33,10 +35,11 @@ func main() {
 			fmt.Println("Error parsing template page")
 		}
 	})
-	err := http.ListenAndServe(":8080", nil)
+
+	err := http.ListenAndServe(localhostPort, nil)
 
 	if err != nil {
-		fmt.Println("Error connecting to localhost:8080")
+		fmt.Println("Error connecting to localhost", localhostPort)
 	}
 
 }
