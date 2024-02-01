@@ -26,7 +26,6 @@ func main() {
 			Todos: []Todo{
 				{Title: "Clean", Done: false},
 				{Title: "Work", Done: true},
-				{Title: "Meditate", Done: true},
 			},
 		}
 		err := tmpl.Execute(w, data)
@@ -35,6 +34,9 @@ func main() {
 			fmt.Println("Error parsing template page")
 		}
 	})
+
+	fs := http.FileServer(http.Dir("assets/"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	err := http.ListenAndServe(localhostPort, nil)
 
