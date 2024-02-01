@@ -35,6 +35,7 @@ func main() {
 		}
 	})
 
+	// handles statics filesimages, css, js
 	fs := http.FileServer(http.Dir("assets/"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
