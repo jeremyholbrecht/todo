@@ -26,6 +26,7 @@ func main() {
 			Todos: []Todo{
 				{Title: "Clean", Done: false},
 				{Title: "Work", Done: true},
+				{Title: "Work", Done: true},
 			},
 		}
 		err := tmpl.Execute(w, data)
