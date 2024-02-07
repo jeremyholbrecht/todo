@@ -27,8 +27,7 @@ func main() {
 				{Title: "Clean", Done: false},
 				{Title: "Work", Done: true},
 				{Title: "Meditate", Done: true},
-				{Title: "Swim", Done: true},
-				{Title: "eat", Done: true},
+				
 			},
 		}
 		err := tmpl.Execute(w, data)
