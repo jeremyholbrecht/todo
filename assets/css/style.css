@@ -12,3 +12,7 @@ h1{
 li.done{
     color: green;
 }
+
+li.unfinished{
+    color: red;
+}
